@@ -1,8 +1,16 @@
+import { Box } from '@mui/material'
 import React from 'react'
 
-const HorizontalScrollbar = () => {
+const HorizontalScrollbar = ({data}) => {
   return (
-    <div>HorizontalScrollbar</div>
+    <div>
+        {data.map((item) => (
+            <Box
+                 key={item.id || item}>
+                 {item}
+            </Box>
+        ))}
+    </div>
   )
 }
 
