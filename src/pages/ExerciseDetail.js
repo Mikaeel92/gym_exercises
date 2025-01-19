@@ -7,6 +7,7 @@ import SimilarExercises from '../components/SimilarExercises';
 
 const ExerciseDetail = () => {
   const [exerciseDetail, setExerciseDetail] = useState({});
+  const [exerciseVideos, setExerciseVideos] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
@@ -35,7 +36,7 @@ const ExerciseDetail = () => {
   return (
     <Box>
       <Detail exerciseDetail={exerciseDetail}/>
-      <ExerciseVideos/>
+      <ExerciseVideos exerciseVideos={exerciseVideos} name={exerciseDetail.name} />
       <SimilarExercises/>
     </Box>
   )
