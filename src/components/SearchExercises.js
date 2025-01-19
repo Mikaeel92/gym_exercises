@@ -3,9 +3,8 @@ import { Box, Button, Stack, TextField, Typography } from '@mui/material';
 import { exerciseOptions, fetchData } from '../utils/fetchData';
 import HorizontalScrollbar from './HorizontalScrollbar';
 
-const SearchExercises = () => {
+const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
     const [search, setSearch] = useState('');
-    const [exercises, setExercises] = useState([])
     const [bodyParts, setBodyParts] = useState([])
 
     useEffect(() => {
@@ -26,7 +25,6 @@ const SearchExercises = () => {
             )
             setSearch('')
             setExercises(searchedExercises)}}
-
   return (
     <Stack alignItems="center" mt="37px" justifyContent="center" p="20px">
         <Typography fontWeight={700} sx={{ fontSize: { lg: '44px', xs: '30px' } }} mb="49px" textAlign="center">
